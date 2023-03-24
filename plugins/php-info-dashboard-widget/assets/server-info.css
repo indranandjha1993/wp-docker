@@ -1,0 +1,19 @@
+#server-info-tabs {
+    margin-top: 20px;
+}
+
+#server-info-tabs .ui-tabs-panel {
+    border: none;
+}
+
+#server-info-tabs .widefat {
+    margin-top: 20px;
+}
+
+#server-info-tabs th {
+    font-weight: bold;
+}
+
+#server-info-tabs td {
+    word-break: break-word;
+}
