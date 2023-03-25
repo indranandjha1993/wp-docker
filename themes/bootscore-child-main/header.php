@@ -50,7 +50,7 @@
                 <div class="container-fluid">
 
                     <!-- Navbar Brand -->
-                    <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">Bhavesh Technology</a>
+                    <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
 
                     <!-- Offcanvas Navbar -->
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navbar">
