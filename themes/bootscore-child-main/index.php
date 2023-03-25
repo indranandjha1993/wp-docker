@@ -149,7 +149,7 @@ get_header();
 
                         <!-- Pagination -->
                         <div>
-                            <?php bootscore_pagination(); ?>
+                            <?php bs_pagination(); ?>
                         </div>
 
                     </div>

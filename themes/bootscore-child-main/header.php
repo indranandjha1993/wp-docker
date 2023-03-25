@@ -69,7 +69,7 @@
                                 'fallback_cb' => '__return_false',
                                 'items_wrap' => '<ul id="bootscore-navbar" class="navbar-nav ms-auto %2$s">%3$s</ul>',
                                 'depth' => 2,
-                                'walker' => new bootstrap_5_wp_nav_menu_walker()
+                                'walker' => new WpNav()
                             ));
                             ?>
                             <!-- Bootstrap 5 Nav Walker Main Menu End -->

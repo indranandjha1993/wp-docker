@@ -12,6 +12,17 @@
 All style editing is done via scss/_bscore_custom.scss
 */
 
+a {
+    color: #08498f;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0077cc;
+}
+
+
 #page {
     display: block;
 }
@@ -243,3 +254,58 @@ section {
 .breadcrumb-scroller {
     width: fit-content;
 }
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+    text-shadow: 2px 2px #ccc;
+}
+
+#bootscore-navbar li {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Pagination styles */
+.pagination {
+    margin: 0;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination .page-link {
+    border-radius: 0;
+    border: none;
+    color: #007bff;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.pagination .page-item.active .page-link {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.pagination .page-link:hover {
+    color: #0056b3;
+    background-color: #f2f2f2;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+}
+
+.pagination .ellipsis {
+    display: inline-block;
+    margin: 0 4px;
+    color: #6c757d;
+    font-weight: bold;
+}
+ .pagination .page-item .page-link, .pagination .page-item.active .page-link {
+     border-radius: 100%;
+ }
