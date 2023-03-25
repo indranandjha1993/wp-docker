@@ -13,23 +13,27 @@
  */
 
 ?>
-<!doctype html>
+    <!doctype html>
 <html <?php language_attributes(); ?>>
 
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/safari-pinned-tab.svg" color="#0d6efd">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    <?php wp_head(); ?>
-</head>
+    <head>
+        <meta charset="<?php bloginfo('charset'); ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="profile" href="https://gmpg.org/xfn/11">
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180"
+              href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+              href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+              href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon/safari-pinned-tab.svg"
+              color="#0d6efd">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <?php wp_head(); ?>
+    </head>
 
 <body <?php body_class(); ?>>
 
@@ -43,7 +47,7 @@
 
             <nav id="nav-main" class="navbar navbar-expand-lg">
 
-                <div class="container">
+                <div class="container-fluid">
 
                     <!-- Navbar Brand -->
                     <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">Bhavesh Technology</a>
@@ -52,7 +56,8 @@
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navbar">
                         <div class="offcanvas-header bg-light">
                             <span class="h5 mb-0"><?php esc_html_e('Menu', 'bootscore'); ?></span>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body">
                             <!-- Bootstrap 5 Nav Walker Main Menu -->
@@ -93,12 +98,17 @@
                         </div>
 
                         <!-- Search Toggler Mobile -->
-                        <button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2 top-nav-search-md" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
-                            <i class="fa-solid fa-magnifying-glass"></i><span class="visually-hidden-focusable">Search</span>
+                        <button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2 top-nav-search-md" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse-search" aria-expanded="false"
+                                aria-controls="collapse-search">
+                            <i class="fa-solid fa-magnifying-glass"></i><span
+                                    class="visually-hidden-focusable">Search</span>
                         </button>
 
                         <!-- Navbar Toggler -->
-                        <button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
+                        <button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar"
+                                aria-controls="offcanvas-navbar">
                             <i class="fa-solid fa-bars"></i><span class="visually-hidden-focusable">Menu</span>
                         </button>
 
@@ -120,3 +130,9 @@
         </div><!-- .fixed-top .bg-light -->
 
     </header><!-- #masthead -->
+
+<?php
+if( is_front_page() ):
+get_template_part('homepage-sections/hero-section');
+get_template_part('homepage-sections/services');
+endif;
