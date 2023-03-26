@@ -309,3 +309,7 @@ section {
  .pagination .page-item .page-link, .pagination .page-item.active .page-link {
      border-radius: 100%;
  }
+
+ #contact-page .card{
+     border: none;
+ }
