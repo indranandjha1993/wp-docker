@@ -103,53 +103,20 @@ get_header();
                 <?php endif; ?>
                 <!-- Post List -->
                 <div class="row">
-                    <div class="col-lg-8 col-md-9">
+                    <div class="col-lg-9 col-md-10">
                         <div class="row g-4 blog-listing">
 
                             <!-- Post Loop -->
-                            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                                <?php if (is_sticky()) continue; //ignore sticky posts ?>
+                            <?php
+                            if (have_posts()) :
+                                while (have_posts()) : the_post();
+                                    if (is_sticky())
+                                        continue;
 
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card h-100">
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <a href="<?php the_permalink(); ?>">
-                                                <?php the_post_thumbnail('medium', array('class' => 'card-img-top img-fluid rounded')); ?>
-                                            </a>
-                                        <?php endif; ?>
+                                    get_template_part('inc/blog-card');
 
-                                        <div class="card-body">
-                                            <div class="mb-2">
-                                                <?php bootscore_category_badge(); ?>
-                                            </div>
-
-                                            <h5 class="card-title">
-                                                <a href="<?php the_permalink(); ?>"
-                                                   class="text-dark text-decoration-none">
-                                                    <?php the_title(); ?>
-                                                </a>
-                                            </h5>
-
-                                            <small class="text-muted mb-2">
-                                                <?php bootscore_date(); ?>
-                                                <?php bootscore_author(); ?>
-                                                <?php bootscore_comments(); ?>
-                                                <?php bootscore_edit(); ?>
-                                            </small>
-
-                                            <p class="card-text mb-4">
-                                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
-                                            </p>
-
-                                            <a href="<?php the_permalink(); ?>" class="btn btn-primary rounded-pill">
-                                                <?php _e('Read More', 'bootscore'); ?>
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            <?php endwhile; endif; ?>
+                                endwhile;
+                            endif; ?>
 
                             <!-- Pagination -->
                             <div class="col-12">
