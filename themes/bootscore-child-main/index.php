@@ -36,7 +36,7 @@ get_header();
                             <?php
                             $args = array(
                                 'posts_per_page' => 2,
-                                'post__in'  => get_option('sticky_posts'),
+                                'post__in' => get_option('sticky_posts'),
                                 'ignore_sticky_posts' => 2
                             );
                             $the_query = new WP_Query($args);
@@ -57,7 +57,9 @@ get_header();
                                                             </div>
                                                             <div class="col-2 text-end">
                                                                 <!-- Featured -->
-                                                                <div class="badge bg-danger"><span class=""><i class="fa-solid fa-star"></i></span></div>
+                                                                <div class="badge bg-danger"><span class=""><i
+                                                                                class="fa-solid fa-star"></i></span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <!-- Title -->
@@ -79,7 +81,8 @@ get_header();
                                                         <?php endif; ?>
                                                         <!-- Excerpt & Read more -->
                                                         <div class="card-text mt-auto">
-                                                            <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                                                            <?php the_excerpt(); ?> <a class="read-more"
+                                                                                       href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                                                         </div>
                                                         <!-- Tags -->
                                                         <?php bootscore_tags(); ?>
@@ -99,61 +102,63 @@ get_header();
                     <!-- row -->
                 <?php endif; ?>
                 <!-- Post List -->
-                <div class="row">
-                    <div class="col col-md-8 col-xxl-9">
-                        <!-- Grid Layout -->
-                        <?php if (have_posts()) : ?>
-                            <?php while (have_posts()) : the_post(); ?>
-                                <?php if (is_sticky()) continue; //ignore sticky posts
-                                ?>
-                                <div class="card horizontal mb-4">
-                                    <div class="row">
-                                        <!-- Featured Image-->
-                                        <?php if (has_post_thumbnail())
-                                            echo '<div class="card-img-left-md col-lg-5">' . get_the_post_thumbnail(null, 'medium') . '</div>';
-                                        ?>
-                                        <div class="col">
-                                            <div class="card-body">
-                                                <div class="mb-2">
-                                                    <?php bootscore_category_badge(); ?>
-                                                </div>
-                                                <!-- Title -->
-                                                <h2 class="blog-post-title">
-                                                    <a href="<?php the_permalink(); ?>">
-                                                        <?php the_title(); ?>
-                                                    </a>
-                                                </h2>
-                                                <!-- Meta -->
-                                                <?php if ('post' === get_post_type()) : ?>
-                                                    <small class="text-muted mb-2">
-                                                        <?php
-                                                        bootscore_date();
-                                                        bootscore_author();
-                                                        bootscore_comments();
-                                                        bootscore_edit();
-                                                        ?>
-                                                    </small>
-                                                <?php endif; ?>
-                                                <!-- Excerpt & Read more -->
-                                                <div class="card-text mt-auto">
-                                                    <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
-                                                </div>
-                                                <!-- Tags -->
-                                                <?php bootscore_tags(); ?>
+                <div class="row blog-listing">
+                    <div class="col-lg-8 col-md-9">
+                        <div class="row g-4">
+
+                            <!-- Post Loop -->
+                            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                                <?php if (is_sticky()) continue; //ignore sticky posts ?>
+
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="card h-100">
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_post_thumbnail('medium', array('class' => 'card-img-top img-fluid rounded')); ?>
+                                            </a>
+                                        <?php endif; ?>
+
+                                        <div class="card-body">
+                                            <div class="mb-2">
+                                                <?php bootscore_category_badge(); ?>
                                             </div>
+
+                                            <h5 class="card-title">
+                                                <a href="<?php the_permalink(); ?>"
+                                                   class="text-dark text-decoration-none">
+                                                    <?php the_title(); ?>
+                                                </a>
+                                            </h5>
+
+                                            <small class="text-muted mb-2">
+                                                <?php bootscore_date(); ?>
+                                                <?php bootscore_author(); ?>
+                                                <?php bootscore_comments(); ?>
+                                                <?php bootscore_edit(); ?>
+                                            </small>
+
+                                            <p class="card-text mb-4">
+                                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                            </p>
+
+                                            <a href="<?php the_permalink(); ?>" class="btn btn-primary rounded-pill">
+                                                <?php _e('Read More', 'bootscore'); ?>
+                                            </a>
                                         </div>
+
                                     </div>
                                 </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
 
-                        <!-- Pagination -->
-                        <div>
-                            <?php bs_pagination(); ?>
+                            <?php endwhile; endif; ?>
+
+                            <!-- Pagination -->
+                            <div class="col-12">
+                                <?php bs_pagination(); ?>
+                            </div>
+
                         </div>
-
                     </div>
-                    <!-- col -->
+
                     <?php get_sidebar(); ?>
                 </div>
                 <!-- row -->

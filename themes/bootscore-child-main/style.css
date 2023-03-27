@@ -306,16 +306,44 @@ section {
     color: #6c757d;
     font-weight: bold;
 }
- .pagination .page-item .page-link, .pagination .page-item.active .page-link {
-     border-radius: 100%;
- }
 
- #contact-page .card{
-     border: none;
- }
+.pagination .page-item .page-link, .pagination .page-item.active .page-link {
+    border-radius: 100%;
+}
+
+#contact-page .card {
+    border: none;
+}
 
 .dropdown-item.active, .dropdown-item:active {
     background-color: #FFFFFF;
     color: #000000;
     font-weight: 600;
+}
+
+/* blog list */
+.blog-listing .card:hover {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.blog-listing .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.blog-listing .card-title a:hover {
+    color: #0d6efd;
+}
+
+.blog-listing .btn-primary:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #FFFFFF;
+}
+
+.blog-listing .btn-primary {
+    background-color: #fff;
+    color: #0d6efd;
+    border-color: #0d6efd;
 }
