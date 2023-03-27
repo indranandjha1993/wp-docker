@@ -1,7 +1,7 @@
 <section id="hero" class="d-flex align-items-center">
 
     <div class="container-fluid pt-5">
-        <div class="row">
+        <div class="row p-4">
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
                 <h1>Expertise in Delivering Custom Software Solutions</h1>
                 <h2>Whether you need to develop a new product or streamline your existing software systems,
