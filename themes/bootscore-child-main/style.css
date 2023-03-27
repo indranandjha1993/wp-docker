@@ -313,3 +313,9 @@ section {
  #contact-page .card{
      border: none;
  }
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: 600;
+}
