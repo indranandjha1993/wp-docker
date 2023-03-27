@@ -102,9 +102,9 @@ get_header();
                     <!-- row -->
                 <?php endif; ?>
                 <!-- Post List -->
-                <div class="row blog-listing">
+                <div class="row">
                     <div class="col-lg-8 col-md-9">
-                        <div class="row g-4">
+                        <div class="row g-4 blog-listing">
 
                             <!-- Post Loop -->
                             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

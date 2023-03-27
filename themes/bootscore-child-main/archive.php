@@ -16,8 +16,8 @@ get_header();
             <!-- Hook to add something nice -->
             <?php bs_after_primary(); ?>
 
-            <div class="row blog-listing">
-                <div class="col-md-12 col-lg-8">
+            <div class="row">
+                <div class="col-md-12 col-lg-8 blog-listing">
 
                     <main id="main" class="site-main">
 
