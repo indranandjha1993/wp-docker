@@ -215,7 +215,7 @@ section {
     margin-bottom: 2rem;
 }
 
-.about .content h2 {
+.about .content h2, #testimonials h2 {
     font-weight: 700;
     font-size: 44px;
     line-height: 50px;
@@ -348,3 +348,6 @@ section {
     border-color: #0d6efd;
 }
 
+#testimonials {
+
+}

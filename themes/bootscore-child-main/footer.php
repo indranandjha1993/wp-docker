@@ -14,7 +14,7 @@
 
 ?>
 
-<footer class="footer mt-auto pt-3 bg-light">
+<footer class="footer mt-auto pt-3 bg-light mt-5">
 
     <div class="bootscore-footer bg-light pt-5 pb-3">
         <div class="container-fluid">
