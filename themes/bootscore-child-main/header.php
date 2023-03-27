@@ -133,7 +133,7 @@
 
 <?php
 if( is_front_page() ):
-get_template_part('homepage-sections/hero-section');
-get_template_part('homepage-sections/services');
+    get_template_part('homepage-sections/hero-section');
+    get_template_part('homepage-sections/services');
     get_template_part('homepage-sections/about');
 endif;
