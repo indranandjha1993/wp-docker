@@ -54,3 +54,18 @@ endif;
 add_action('after_setup_theme', 'register_bs_navwalker');
 // Register Bootstrap 5 Nav Walker END
 
+
+// Create shortcut for homepage sections
+function main_homepage_sections() {
+    get_template_part('homepage-sections/hero-section');
+    get_template_part('homepage-sections/services');
+    get_template_part('homepage-sections/about');
+}
+
+function main_homepage_sections_shortcode() {
+    ob_start();
+    main_homepage_sections();
+    return ob_get_clean();
+}
+add_shortcode( 'main_homepage_sections', 'main_homepage_sections_shortcode' );
+// Create shortcut for homepage sections END
