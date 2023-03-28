@@ -16,18 +16,15 @@ get_header();
 
             <!-- Hook to add something nice -->
             <?php bs_after_primary(); ?>
-
+            <!-- Title & Description -->
+            <div class="py-3 py-md-5 text-center">
+                <h1 class="display-6"><?php the_archive_title(); ?></h1>
+                <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+            </div>
             <div class="row">
-                <div class="col">
+                <div class="col-lg-9 col-md-10">
 
                     <main id="main" class="site-main">
-
-                        <!-- Title & Description -->
-                        <header class="page-header mb-4">
-                            <h1><?php the_archive_title(); ?></h1>
-                            <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
-                        </header>
-
                         <div class="row g-4 blog-listing">
 
                                     <!-- Post Loop -->

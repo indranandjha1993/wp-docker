@@ -25,7 +25,7 @@ get_header();
 
                 <!-- Header -->
                 <div class="py-3 py-md-5 text-center">
-                    <h1 class="display-1"><?php bloginfo('name'); ?></h1>
+                    <h1 class="display-6"><?php bloginfo('name'); ?></h1>
                     <p class="lead"><?php bloginfo('description'); ?></p>
                 </div>
 
