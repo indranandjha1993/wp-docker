@@ -351,3 +351,24 @@ section {
 #testimonials {
 
 }
+
+/* Language Switcher */
+#bootscore-navbar .pll-parent-menu-item {
+    background: linear-gradient(to right, #F2F2F4, #4a00e000);
+    border-radius: 20px;
+    box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.24);
+    transition: transform 0.2s ease-in-out;
+}
+#bootscore-navbar .pll-parent-menu-item:hover {
+    transform: scale(1.01);
+}
+.dropdown-menu {
+    --bs-dropdown-min-width: 5rem;
+}
+
+#bootscore-navbar .pll-parent-menu-item a {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 12px 5px 0px 5px;
+}
